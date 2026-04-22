@@ -52,4 +52,7 @@ function onFormSubmit(event) {
 
   localStorage.removeItem('feedback-form-state');
   refs.feedbackForm.reset();
+  Object.keys(formData).forEach(key => delete formData[key]);
 }
+
+console.log(formData);
