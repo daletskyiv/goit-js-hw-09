@@ -1,4 +1,5 @@
 import SimpleLightbox from 'simplelightbox';
+import 'simplelightbox/dist/simple-lightbox.min.css';
 
 const images = [
   {
@@ -88,4 +89,10 @@ const imageCard = images
 
 href.imageList.innerHTML = imageCard;
 
-const gallery = new SimpleLightbox('.gallery a');
+const gallery = new SimpleLightbox('.gallery a', {
+  captions: true,
+  captionSelector: 'img',
+  captionType: 'attr',
+  captionsData: 'alt',
+  captionDelay: 250,
+});
