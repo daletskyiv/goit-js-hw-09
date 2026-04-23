@@ -11,7 +11,7 @@ refs.feedbackForm.addEventListener('input', onFormChange);
 
 function onFormChange(event) {
   const formName = event.target.name;
-  const formValue = event.target.value.trim();
+  const formValue = event.target.value;
 
   formData[formName] = formValue;
 
@@ -48,11 +48,9 @@ function onFormSubmit(event) {
     alert('Fill please all fields');
     return;
   }
-  console.log(formData);
 
   localStorage.removeItem('feedback-form-state');
   refs.feedbackForm.reset();
-  Object.keys(formData).forEach(key => delete formData[key]);
+  formData.email = '';
+  formData.message = '';
 }
-
-console.log(formData);
