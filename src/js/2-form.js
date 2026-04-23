@@ -48,6 +48,7 @@ function onFormSubmit(event) {
     alert('Fill please all fields');
     return;
   }
+  console.log(formData);
 
   localStorage.removeItem('feedback-form-state');
   refs.feedbackForm.reset();
